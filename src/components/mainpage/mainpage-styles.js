@@ -64,8 +64,7 @@ const StyledLabel = styled.label`
 `
 
 const StyledCard = styled.div`
-    display: flex; 
-    border: 1px solid black;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
