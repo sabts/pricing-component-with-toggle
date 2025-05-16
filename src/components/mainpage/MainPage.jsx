@@ -1,18 +1,22 @@
 import { useState } from "react"
 import {SUBSCRIPTIONPLAN_CONTENT} from "../../constants/subscriptionplan-content"
+import { StyledLabel, StyledSection,  HiddenCheckbox } from "./mainpage-styles";
 
 const MainPage = () => {
 const [subscriptionType, setSubscriptionType] = useState(false)
 const currentPlan = subscriptionType ? 'annually' : 'monthly';
 
-    return  <section>
+    return  <StyledSection>
     <h1>Our Pricing</h1>
     <div>
         <span>Annually</span>
-        <label htmlFor="toggle"></label>
-        <input type="checkbox" 
-        id="toggle" 
-        onChange={() => setSubscriptionType(!subscriptionType)}/>
+        <HiddenCheckbox
+          id="toggle"
+          type="checkbox"
+          checked={subscriptionType}
+          onChange={() => setSubscriptionType(!subscriptionType)}
+        />
+        <StyledLabel htmlFor="toggle" $checked={subscriptionType} />
         <span>Monthly</span>
     </div>
 
@@ -28,7 +32,7 @@ const currentPlan = subscriptionType ? 'annually' : 'monthly';
           </div>
         ))}
       </div>
-    </section>
+      </StyledSection>
 }
 
 export default MainPage
