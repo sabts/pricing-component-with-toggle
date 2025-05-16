@@ -1,6 +1,6 @@
 import { useState } from "react"
 import {SUBSCRIPTIONPLAN_CONTENT} from "../../constants/subscriptionplan-content"
-import { StyledLabel, StyledSection,  HiddenCheckbox, StyledSubscriptionMode, StyleHeader, StyledH1, StyledCard, StyledText, StyledButton } from "./mainpage-styles";
+import { StyledLabel, StyledSection,  HiddenCheckbox, StyledSubscriptionMode, StyleHeader, StyledH1, StyledCard, StyledText, StyledButton, StyledSpaceSplitter } from "./mainpage-styles";
 
 const MainPage = () => {
 const [subscriptionType, setSubscriptionType] = useState(false)
@@ -29,9 +29,13 @@ const currentPlan = subscriptionType ? 'annually' : 'monthly';
           <StyledCard key={plan.type} $type={plan.type}>
             <StyledText size="medium" $type={plan.type}>{plan.type}</StyledText>
       <StyledText size="extraLarge" $type={plan.type}>{plan.price}</StyledText>
+      <StyledSpaceSplitter  $type={plan.type}/>
       <StyledText size="small" $type={plan.type}>{plan.storage}</StyledText>
+      <StyledSpaceSplitter  $type={plan.type}/>
       <StyledText size="small" $type={plan.type}>{plan.users}</StyledText>
+      <StyledSpaceSplitter  $type={plan.type}/>
       <StyledText size="small" $type={plan.type}>{plan.sendUp}</StyledText>
+      <StyledSpaceSplitter  $type={plan.type}/>
       <StyledButton size="extraSmall" $type={plan.type}>LEARN MORE</StyledButton>
             </StyledCard>
         ))}

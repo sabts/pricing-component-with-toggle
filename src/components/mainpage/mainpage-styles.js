@@ -9,7 +9,8 @@ const StyledSection = styled.section `
     justify-content: center;
     padding-top: 64px;
     padding-inline: 24px;
-     padding-bottom: 32px;
+    padding-bottom: 32px;
+    background: ${COLORS.primary};
 `
 
 const StyleHeader = styled.header`
@@ -18,6 +19,7 @@ const StyleHeader = styled.header`
     justify-content: center;
     align-items: center;
     gap: 40px;
+    margin-bottom: 82px
 `
 const StyledH1 = styled.h1`
     font-size: 2rem;
@@ -67,21 +69,32 @@ const StyledCard = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 1.5rem;
     justify-content: center;
     width: 327px;
     height: 453px;
+     margin-bottom: 2rem;
     border-radius: 10px;
     background: ${(props) =>
     props.$type === "professional" ? COLORS.gradient : COLORS.secondary};
     box-shadow: 0px 20px 40px 0px rgba(212, 210, 244, 0.50);
 `
 
+const StyledSpaceSplitter = styled.div`
+width: 269px;;
+height: 1px;
+margin:14px;
+background: ${(props) =>
+    props.$type === "professional" ? COLORS.secondary : COLORS.neutralMedium};
+`
+
+
 const StyledText = styled.p`
     font-size: ${(props) => TEXT_SIZE[props.size]}; 
     color: ${(props) =>
-    props.$type === "professional" ? COLORS.secondary : COLORS.neutralDark};
+    props.$type === "professional" ? COLORS.secondary : '#6E728E'};
     font-weight: 700;
-    margin: 12px;
+    margin: 8px;
 `;
 
 const StyledButton = styled.button`
@@ -97,4 +110,4 @@ const StyledButton = styled.button`
     font-size: ${(props) => TEXT_SIZE[props.size]}; 
 `
 
-export {StyledSection, StyleHeader, StyledH1, StyledSubscriptionMode, StyledLabel, HiddenCheckbox, StyledCard, StyledText, StyledButton}
+export {StyledSection, StyleHeader, StyledH1, StyledSubscriptionMode, StyledLabel, HiddenCheckbox, StyledCard, StyledText,StyledSpaceSplitter , StyledButton}
