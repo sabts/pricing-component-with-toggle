@@ -5,7 +5,7 @@ const MainPage = () => {
 const [subscriptionType, setSubscriptionType] = useState(false)
 const currentPlan = subscriptionType ? 'annually' : 'monthly';
 
-    return  <>
+    return  <section>
     <h1>Our Pricing</h1>
     <div>
         <span>Annually</span>
@@ -28,7 +28,7 @@ const currentPlan = subscriptionType ? 'annually' : 'monthly';
           </div>
         ))}
       </div>
-    </>
+    </section>
 }
 
 export default MainPage
