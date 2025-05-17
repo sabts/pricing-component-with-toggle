@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {COLORS} from "../../styles/colors"
 import { TEXT_SIZE } from "../../styles/textSize";
+import { IMAGES } from "../../styles/images";
 
 const StyledSection = styled.section `
     display: flex;
@@ -11,6 +12,19 @@ const StyledSection = styled.section `
     padding-inline: 24px;
     padding-bottom: 32px;
     background: ${COLORS.primary};
+    
+&::after{
+    content:'';
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: url(${IMAGES.bgTop});
+}
 `
 
 const StyleHeader = styled.header`
@@ -62,7 +76,15 @@ const StyledLabel = styled.label`
     transition: transform 0.3s ease;
     transform: ${(props) => (props.$checked ? "translateX(20%)" : "translateX(110%)")};
 }
-}
+`
+const StyledDivForCards = styled.div`
+  display: flex;
+  flex-direction: column;
+
+ @media screen and (min-width: 1024px) {
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
 `
 
 const StyledCard = styled.div`
@@ -73,11 +95,17 @@ const StyledCard = styled.div`
     justify-content: center;
     width: 327px;
     height: 453px;
-     margin-bottom: 2rem;
+    margin-bottom: 2rem;
     border-radius: 10px;
     background: ${(props) =>
     props.$type === "professional" ? COLORS.gradient : COLORS.secondary};
     box-shadow: 0px 20px 40px 0px rgba(212, 210, 244, 0.50);
+
+ @media screen and (min-width: 1024px) {
+    height: ${(props) =>
+    props.$type === "professional" ? "500px" : "453px"};
+ }
+
 `
 
 const StyledSpaceSplitter = styled.div`
@@ -110,4 +138,4 @@ const StyledButton = styled.button`
     font-size: ${(props) => TEXT_SIZE[props.size]}; 
 `
 
-export {StyledSection, StyleHeader, StyledH1, StyledSubscriptionMode, StyledLabel, HiddenCheckbox, StyledCard, StyledText,StyledSpaceSplitter , StyledButton}
+export {StyledSection, StyleHeader, StyledH1, StyledSubscriptionMode, StyledLabel, HiddenCheckbox, StyledDivForCards ,StyledCard, StyledText,StyledSpaceSplitter , StyledButton}
