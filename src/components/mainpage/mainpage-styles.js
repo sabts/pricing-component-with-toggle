@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import {COLORS} from "../../styles/colors"
 import { TEXT_SIZE } from "../../styles/textSize";
-import { IMAGES } from "../../styles/images";
 
 const StyledSection = styled.section `
+    position: relative;
     display: flex;
+    overflow: hidden; 
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -17,14 +18,31 @@ const StyledSection = styled.section `
     content:'';
     position: absolute;
     background-repeat: no-repeat;
-    background-size: cover;
-    width: 200px;
-    height: 200px;
+    width: 472px;
+    height: 758px;
     position: absolute;
-    top: 0;
-    right: 0;
-    background-image: url(${IMAGES.bgTop});
+    top: 0px;
+    right: -290px;
+    background-image: url(/assets/bg-top.svg)
 }
+    @media screen and (min-width: 1024px) {
+  &::after{
+    content:'';
+    top: 0px;
+    right: -100px;
+    }
+
+    &::before{
+    content:'';
+    position: absolute;
+    background-repeat: no-repeat;
+    width: 472px;
+    height: 758px;
+    position: absolute;
+    bottom: -460px; 
+    left: 0px;
+    background-image: url(/assets/bg-bottom.svg)
+    }
 `
 
 const StyleHeader = styled.header`
@@ -75,11 +93,18 @@ const StyledLabel = styled.label`
     background-color:  ${COLORS.secondary};
     transition: transform 0.3s ease;
     transform: ${(props) => (props.$checked ? "translateX(20%)" : "translateX(110%)")};
+    }
+
+@media (hover: hover) {
+  &:hover {
+    background:rgb(204, 206, 249);
+  }
 }
 `
 const StyledDivForCards = styled.div`
   display: flex;
   flex-direction: column;
+  z-index: 1;
 
  @media screen and (min-width: 1024px) {
    flex-direction: row;

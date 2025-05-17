@@ -1,4 +1,4 @@
 export const IMAGES = {
-    bgTop: '/bg-top.svg',
-    bgbottom: '/bg-bottom.svg'
+    bgTop: '/assets/bg-top.svg',
+    bgbottom: '/assets/bg-bottom.svg'
 }
